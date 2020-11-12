@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= title %> </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <ul>
+      <%for(let i=0 ; i < messages.length; i++){%>
+        <li><%= messages[i].text;%>
+          <%= "- " + messages[i].user;%>
+        </li>
+        <%}%>
+      </ul>
+      <div class="buttonDiv">
+        <form class="removeItem" action="/delete" method="get">
+          <button type="submit" name="button">Delete</button>
+        </form>
+      </div>
+    </body>
+
+    <style>
+    h1{
+      text-align: center;
+    }
+    p{
+      text-align: center;
+    }
+    ul{
+      text-align: center;
+      list-style-position: inside;
+    }
+    .buttonDiv{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</html>
